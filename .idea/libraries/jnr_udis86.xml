@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="jnr-udis86">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/com.github.jnr.udis86/lib/jnr-udis86.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/com.github.jnr.udis86/lib/jnr-udis86_src.zip!/" />
+    </SOURCES>
+  </library>
+</component>

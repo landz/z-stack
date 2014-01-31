@@ -1,0 +1,11 @@
+<component name="CopyrightManager">
+  <settings default="landz">
+    <module2copyright>
+      <element module="All" copyright="landz" />
+    </module2copyright>
+    <LanguageOptions name="__TEMPLATE__">
+      <option name="separateBefore" value="true" />
+      <option name="lenBefore" value="2" />
+    </LanguageOptions>
+  </settings>
+</component>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/com.github.jnr.jffi/com.github.jnr.jffi.iml" filepath="$PROJECT_DIR$/com.github.jnr.jffi/com.github.jnr.jffi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/com.github.jnr.udis86/com.github.jnr.udis86.iml" filepath="$PROJECT_DIR$/com.github.jnr.udis86/com.github.jnr.udis86.iml" />
+      <module fileurl="file://$PROJECT_DIR$/com.github.jnr.x86asm/com.github.jnr.x86asm.iml" filepath="$PROJECT_DIR$/com.github.jnr.x86asm/com.github.jnr.x86asm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/landz.kernel/landz.kernel.iml" filepath="$PROJECT_DIR$/landz.kernel/landz.kernel.iml" />
+      <module fileurl="file://$PROJECT_DIR$/landz.kernel.tests/landz.kernel.tests.iml" filepath="$PROJECT_DIR$/landz.kernel.tests/landz.kernel.tests.iml" />
+      <module fileurl="file://$PROJECT_DIR$/landz.lambdabyte/landz.lambdabyte.iml" filepath="$PROJECT_DIR$/landz.lambdabyte/landz.lambdabyte.iml" />
+      <module fileurl="file://$PROJECT_DIR$/landz.lambdabyte.tests/landz.lambdabyte.tests.iml" filepath="$PROJECT_DIR$/landz.lambdabyte.tests/landz.lambdabyte.tests.iml" />
+      <module fileurl="file://$PROJECT_DIR$/landz.net.base/landz.net.base.iml" filepath="$PROJECT_DIR$/landz.net.base/landz.net.base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/landz.net.base.tests/landz.net.base.tests.iml" filepath="$PROJECT_DIR$/landz.net.base.tests/landz.net.base.tests.iml" />
+      <module fileurl="file://$PROJECT_DIR$/landz.net.http/landz.net.http.iml" filepath="$PROJECT_DIR$/landz.net.http/landz.net.http.iml" />
+      <module fileurl="file://$PROJECT_DIR$/landz.net.http.tests/landz.net.http.tests.iml" filepath="$PROJECT_DIR$/landz.net.http.tests/landz.net.http.tests.iml" />
+      <module fileurl="file://$PROJECT_DIR$/landz.testware/landz.testware.iml" filepath="$PROJECT_DIR$/landz.testware/landz.testware.iml" />
+      <module fileurl="file://$PROJECT_DIR$/landz.testware.libraries/landz.testware.libraries.iml" filepath="$PROJECT_DIR$/landz.testware.libraries/landz.testware.libraries.iml" />
+      <module fileurl="file://$PROJECT_DIR$/landz.testware.tests/landz.testware.tests.iml" filepath="$PROJECT_DIR$/landz.testware.tests/landz.testware.tests.iml" />
+      <module fileurl="file://$PROJECT_DIR$/landz.zee/landz.zee.iml" filepath="$PROJECT_DIR$/landz.zee/landz.zee.iml" />
+      <module fileurl="file://$PROJECT_DIR$/landz.znr.linux.x64/landz.znr.linux.x64.iml" filepath="$PROJECT_DIR$/landz.znr.linux.x64/landz.znr.linux.x64.iml" />
+      <module fileurl="file://$PROJECT_DIR$/landz.znr.linux.x64.tests/landz.znr.linux.x64.tests.iml" filepath="$PROJECT_DIR$/landz.znr.linux.x64.tests/landz.znr.linux.x64.tests.iml" />
+    </modules>
+  </component>
+</project>
+

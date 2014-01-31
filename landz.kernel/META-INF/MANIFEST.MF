@@ -1,0 +1,10 @@
+z-name: landz.kernel
+z-version: 1.0.0
+z-vendor: LandZ
+z-meta: {
+  "description": "This module provide the kernel of all core functionalities of LandZ",
+  "url":         "www.landz.io",
+  "license":     "APL2"
+  "changelog":   "www.landz.io/changes/1"
+  }
+z-requires:

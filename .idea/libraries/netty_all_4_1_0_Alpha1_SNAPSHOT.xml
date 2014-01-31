@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="netty-all-4.1.0.Alpha1-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/landz.testware.libraries/lib/netty-all-4.1.0.Alpha1-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/landz.testware.libraries/lib/netty-all-4.1.0.Alpha1-SNAPSHOT-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

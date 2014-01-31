@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="jffi">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/com.github.jnr.jffi/lib/jffi.jar!/" />
+      <root url="jar://$PROJECT_DIR$/com.github.jnr.jffi/lib/jffi-x86_64-Linux.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/com.github.jnr.jffi/lib/jffi-src.zip!/" />
+    </SOURCES>
+  </library>
+</component>
