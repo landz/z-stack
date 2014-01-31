@@ -1,0 +1,251 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Landz by landz</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Landz</h1>
+        <p>a foundation, for the pleasure of backend engineering, with Java 8</p>
+        <p class="view"><a href="https://github.com/landz/z-stack">View the Project on GitHub <small>landz/z-stack</small></a></p>
+        <ul>
+          <li><a href="https://github.com/landz/z-stack/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/landz/z-stack/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/landz/z-stack">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a name="landz-set-down-a-solid-base-for-next-three-years-java-backend" class="anchor" href="#landz-set-down-a-solid-base-for-next-three-years-java-backend"><span class="octicon octicon-link"></span></a>Landz: set down a solid base for next three years' Java backend</h1>
+
+<p>Thanks for all coming in. This is the first article of the Landz project. I firstly put it into the <a href="https://news.ycombinator.com/">NH</a>, where I thought, Landz may be more welcome for the brave to change. But with continuing to go ahead, the Java or wider community will have the message.</p>
+
+<h2>
+<a name="tldr" class="anchor" href="#tldr"><span class="octicon octicon-link"></span></a>TL;DR</h2>
+
+<h2>
+<a name="basic-philosophies" class="anchor" href="#basic-philosophies"><span class="octicon octicon-link"></span></a>Basic Philosophies</h2>
+
+<p>Two most significant characteristics are: <strong>conciseness</strong> and <strong>high performance</strong>. </p>
+
+<p>In these years' experience of software engineering, I've always seen too many developers have wasted too many times to repeat the same mistakes one by one. One common point is that they always use some stupid monster frameworks, no matter open-souce or commerical. These frameworks usually has a "simple" "box" for binding your business into their "workflow". The users often do not understand or control the frameworks, and the reason that they use these frameworks is just that "it is said other people use them". And even the developers of these framework do not understand or control the frameworks in that these monsters are developed by monster teams, and have been out of themself's control.</p>
+
+<p>Another interesting philosophy of Landz is:</p>
+
+<blockquote>
+<p>Software has bugs always.</p>
+</blockquote>
+
+<p>Note this also applies to Landz itself. Then, the question comes out: how do we do if the "workflow" broken?
+The answer is that your business become broken now. More, if you can not fix your broken parts soon, then a few crackers may take use of it. This may highly even damages the business of the clients of your business.</p>
+
+<p><strong>Conciseness</strong> is one most thing Landz want to bring into our older broken Java community. Landz with conciseness helps the users to understand and control the "Landz" themself other than hiding itself via any maigics. Landz believes the conciseness and "no-maigic" give the full control over and then best values to your bussiness. Say goodbye to any stupid monsters.</p>
+
+<p><strong>High performance</strong> is another concern of Landz.  Landz digs out the maximum capacity of system and hardware on top of modern commodity server and modern Java. The existed frameworks often focus on the features rathter than performance. Instead, Landz desires bare metal performance. Start-ups usually choose simple solutions for fast prototyping. Then, they find the solution can not support their fast-grown business. They change to more matural platform, like Java. The is the stories for many start-ups. We also believe there is no essential conflict betweem fast and performance, which are both explored by Landz in core level. To use the Landz from your first day of starting up makes your wasted minimized and life easier:)</p>
+
+<p>Sometimes, the above two characteristics are not always exactly matched up with each other. Landz trys to find a trade-off between two. When it is found that we make some mistake in the two, we drop it. Yes, we will not keep mistakes for the stupid compatibility(of course, we will consider the existed Landz's users).</p>
+
+<p>For clear emphasis, particularly the following statements are <strong>not the goals of Landz</strong>:</p>
+
+<ul>
+<li><p><strong>compliant with any specification</strong>.
+this does not mean Landz do not implement any specification. But it means Landz keeps his independent judgement to these specifications. </p></li>
+<li><p><strong>promote any style.</strong>
+You may think Landz should be in reactive or FP style. But it is not the goal of Landz. The style does not change the bare metal execution. Whether one style is easier to accept than others matters individually. Style is a thing that would be outdated easily. As a foundation, it is hoped the Landz can be welcome to the wider crowd with different favors. </p></li>
+<li><p><strong>polyglot for all languages</strong>.
+In fact, Landz itself is in the land of Java. As we known, there are many languages on JVM which try to resolve some problems in the enterpise(backend) Java development. Here, I do not comment on any these languages. What I love the Java language is that it is a kind of C++-- style. We can get the bare metal power from simple language constructs with Java.</p></li>
+</ul><p>For some particular modules/components of Landz, Landz may provide some other language supports, like javascript based scripting support for DevOps side modules. But the script language itself will serve as a facade for back Java objects(in that the Java's syntax is still verbose for scripting). Still note, Landz does not want to introduce any magic. Although polyglot is OK on the higher layer of module hierarchy. But this will be based on the result of community efforts. And this is out of the current scope of Landz and its contributors.</p>
+
+<p>Finally, the above emphases answer another question implicitly: why Landz not contribute to an existed project? Landz has very different world views in software development.</p>
+
+<h2>
+<a name="big-picture" class="anchor" href="#big-picture"><span class="octicon octicon-link"></span></a>Big Picture</h2>
+
+<h3>
+<a name="java-8" class="anchor" href="#java-8"><span class="octicon octicon-link"></span></a>Java 8</h3>
+
+<p>The Landz only supports Java 8+. So, if you are not comfortable about the  when you reach here. You may ignore the rest part of this article. And, it is sorry for this.</p>
+
+<p>Yes, the Java 8 has not been officially released now. However, still from these years' experience of one Java veteran, soon we may not live without it.</p>
+
+<p>The most impressive thing happened in Java 8, in my eye, is not the numerous new features, but the constructive atmosphere which I seen in the communities around OpenJDK become thriving.</p>
+
+<p>All features are decided by some fews and under the secrete table. (And, this still holds to most JavaEE JSRs. this is why JavaEE has killed themselves.) This is just the primary impression of Java to the common Java developers in a long term. The open source of Java indeed changes the evolution of Java. More language designers and implementors come to the community to make themselves being more wise and less stupid.</p>
+
+<p>Landz has heavily used all the wonderful of Java 8. But I do not repeat any about Java 8 more. Serve yourself by googling.</p>
+
+<h3>
+<a name="z-kernel" class="anchor" href="#z-kernel"><span class="octicon octicon-link"></span></a>Z Kernel</h3>
+
+<p>As its name, z.kernel provide a core must-have of Landz(but still require OpenJDK 8+). The kernel is designed to use as a library. Then, it has three merits:</p>
+
+<ul>
+<li>any framwork behaviour is not allowed. something like adding agent to your boot command line to enable bytecode magic; </li>
+<li>single jar. Lanz kernel does not rely on 3rd parties library except OpenJDK 8+;(in fact, it can run on OpenJDK 8 Compact profile 1)</li>
+<li>platform-independent.</li>
+</ul><h3>
+<a name="concurrency-facilities" class="anchor" href="#concurrency-facilities"><span class="octicon octicon-link"></span></a>Concurrency Facilities</h3>
+
+<p>The frequency match has been come its death end several years ago. Multi-core is the destination for next tens of years(although the number of mainstream x86 cores increase very slowly for kinds of reasons.) That means, we can only scale with bare metal when we have the right concurrency tools.</p>
+
+<p>We can not require every developer to understand the JMM or the internal of cache coherence . So, Landz has investigated, provided and continues to improve/add the best concurrency facilities in the world into its kernel for your . </p>
+
+<h4>
+<a name="itcinter-thread-communication-channel" class="anchor" href="#itcinter-thread-communication-channel"><span class="octicon octicon-link"></span></a>ITC(Inter-Thread-Communication) Channel</h4>
+
+<p>Firstly, Landz has provided some lock-free queue implementations as ITC mechanism via the Channel API. </p>
+
+<p>Particularly, HyperLoop (OK, the name ) is a ring buffer backed SPSC(Single-Producer Single-Consumer) or SPMC(Single-Producer Multi-Consumer) queue as a data structure rather than <a href="https://github.com/LMAX-Exchange/disruptor">Disruptor</a>'s framework style. So the usage of HyperLoop is much easier than the Disruptor. We provide two primitive specializations of HyperLoop to enble extreme performance when your needed. The most important benefit of HyperLoop (and Disruptor) is, that it does not use any full memory fence in cache-coherent-maintianed arch CPU. For x86, it does . But, note, the HyperLoop (and Disruptor) is just excellent for broadcasting style delivery mechanism. So, it is not usual sense "queue". Then, further more, the slow consumers block the whole progress of producting/consuming. This limits the usage of such channel. Our HyperLoop has the similiar throughput like Disruptor, but shows 100% or more latency improvement on my i7+linux environment(without affinity pinning. note: Landz provides a great affinity binding DSL in landz.znr.linux.x64).</p>
+
+<p>GenericMPMCQueue gives a lock-free MPMC(Multi-Producer Multi-Consumer) queue implementation. This implementation is based on Google' <a href="http://research.google.com/pubs/DmitryVyukov.html">Dmitry Vyukov</a>(now work for Golang concurrency)'s <a href="http://www.1024cores.net/home/lock-free-algorithms/queues/bounded-mpmc-queue">MPMC queue</a>. This is only correct MPMC queue implementation I have seen in open source Java currently. It is genernally faster than great Doug Lea's well-known ConcurrentLinkedQueue(Sometimes, it demonstrates 7x fastest than CLQ in one of Landz tests. Note: Landz wins in this testcase because the better memory locality but not due to the GC overloading.) The only cute is that GenericMPMCQueue is not lock-free(Vyukov said this "not totally lock-free"), but Doug Lea's CLQ is. GenericMPMCQueue can not guarantee the progress of system at some times but as you seen it works greatly for pratices.(Detail theory needs another article to cover...)</p>
+
+<p>Different to all I reviewed lock-free queue Java implementations, all Landz's implementations has a suit of robost tests to gaurantee the correctness of them. And Landz used the offheap to offer the false-shareing avoidance and memory alignment. In the investigation of existed implementations, I find a barrier bug in Disruptor and an implementation mistake in <a href="https://github.com/puniverse/quasar">Quasar</a> (to my interesting, Quasar is developed by a company funded by the Y combinator). So, generally, the Landz provides the highest quality which you can use in your production.</p>
+
+<p>There are some other implementations of SPSC likes shown in <a href="http://psy-lob-saw.blogspot.com/">Nitsan Wakart's blog</a>. The experiments by me shows that the largest throughput can only be available in a case of special large buffer size(and not match to the comment left by Nitsan himself). For the massive ITC, the total buffer requirement is O(n^2), n is the number of thread. The bloating soon kills the speed of SPSC. And other problem for Nitsan's work is, throughput is not the whole story of his SPSC. Nitsan does not give out a full analysis on the exact means of the value of throughput. Generally, a delay (in latency) will improve the throughput with a large buffer. According to my this statement, the maximum throughput can be achieved with filling an array and exchanging this array object via a non-full-fence SPSC, and the result should be similiar(G+ OP/s). There is some discussions in one recent infoq article on this. OK. This is still not full picture in fact. We leave more details to the future's article. </p>
+
+<h4>
+<a name="concurrency-constructs" class="anchor" href="#concurrency-constructs"><span class="octicon octicon-link"></span></a>Concurrency Constructs</h4>
+
+<p>The ITC Channel solves the communication problem between different running execution threads. But one problem remains: how to make the program to run on many cores efficiently?</p>
+
+<p>Yes, the programmer is responsible for this. But, does programmer know how to do this efficiently? Java has the Thread. But it is heavy when you spawn much. For modern languages, they go back to a concept - : Erlang/Scala have actor, Go use goroutine.</p>
+
+<p><a href="http://en.wikipedia.org/wiki/Actor_model">Actor model</a> itself does not solves the execution problem. Because how to run actor's processing logic is out of the scope of the model. The true value of actor lies in the message passing idea for concurrency safety. Another implicit difficulty of actor is the message passing protocol desgin. Complex message network may lead to hard-debugging bug.</p>
+
+<p>Coroutine like lightweight thread provides lightweight way in its appearance. But how to cooperate betweem coroutines is still a problem for programmer. </p>
+
+<p>I try to see if Landz can mitigate this pain of programmer by use of new concepts and technologies in Java community, like the great working stealing shown in the Java 7 forkjoin. I have not completed the Landz concurrency constructs. If you have ideas about this for Landz should reference or implement, do not hesitate to give your suggestions in the <a href="http://groups.google.com/d/forum/landz">Landz's group</a>.</p>
+
+<h3>
+<a name="offheap-facilities" class="anchor" href="#offheap-facilities"><span class="octicon octicon-link"></span></a>Offheap Facilities</h3>
+
+<p>Java heap always shows bad stop time when the GC pressure is very high. However, this usually occurs in high performance Java field. One recent <a href="https://blog.twitter.com/2013/netty-4-at-twitter-reduced-gc-overhead">Twitter's blog entry</a> shows the problem and their effort on this side in <a href="http://netty.io/">Netty</a> 4.  The common solution is to use the offheap memory area which can be directly accessed by the hotspot unsafe tool (this is why Landz only declares to suppor the hotspot/openJDK) or indirectly like via nio buffer. </p>
+
+<p>Landz provides one best quasi-general offheap memory allocator - zmalloc. It is designed to have high performance with scalable hardware support(lock-free, space-compact), zero garbage generation and built-in statistics in the pure Java. </p>
+
+<p>Generally, people can use object/buffer pool to avoid the complex general malloc technique. But the pool fails in the following cases:</p>
+
+<ul>
+<li>dynamic size or high throughput
+this is usually for the field of network side buffer </li>
+<li>repeating alloc/free in your pool</li>
+<li>on-heap pool with large szie of objects
+these objects still worsen GC scanning although they are not garbage, but GC does not know this.</li>
+</ul><p>So, it is good idea to combine both to meet your requirement rather than rely on on single. Note, Landz also provides a fast thread-safe pool for your using.</p>
+
+<p>Originally, I investigate the Netty 4's implementation to see if you . The unrestricted usage of keyword "synchronized" means Netty's implementation far from high performance field although the author <a href="https://blog.twitter.com/2013/netty-4-at-twitter-reduced-gc-overhead">mentioned</a> the <a href="http://www.canonware.com/jemalloc/">jemalloc</a>. I am not sure whether Netty compares its implementation to jemalloc but Landz does!:)</p>
+
+<p>The implementation idea of zmalloc comes from the public references of several allocator, like tcmalloc, jemalloc and Memcached's allocator and even linux kernel slab allocator etc.. Zmalloc uses chunk/page two-level structure to enable cache. The small size buffer is close to the speed stack allocation. The careful lock-free design combines the thread-local alloc/free speed and cross-thread alloc/free safty. I have heavily jdoc-ed the source of <a href="https://github.com/landz/z-stack">zmalloc</a>. If you have any question about this, jump into <a href="http://groups.google.com/d/forum/landz">Landz's group</a>.</p>
+
+<p>This zmalloc deserves a big whole of article to address. So, here, I just post some exciting result:</p>
+
+<blockquote>
+<p>In the single simple 15 bytes 10000000 times allocation-free tests, zmalloc is 2.6x faster than jemalloc and 40% faster than glibc's malloc(ptmalloc) in allocation; zmalloc is 7.5x faster than jemalloc and 2.7x faster than glibc's malloc(ptmalloc) in de-allocation(free). </p>
+
+<p>In the two-threaded simple 15 bytes 10000000 times allocation(in one thread)-free(in another thread) tests, zmalloc is 1.7x faster than jemalloc and 2.2x faster than glibc's malloc(ptmalloc) in allocation; zmalloc is 2.1x faster than jemalloc and 9% (slightly) faster than glibc's malloc(ptmalloc) in de-allocation(free). </p>
+
+<p></p>
+<p> Two points here: </p>
+
+<ul>
+<li>zmalloc is faster than jemalloc and glibc in these simple tests; </li>
+<li>
+<p>the glibc' malloc(modern kernel, like now my 3.12.9) has been faster than jemalloc(my 3.5.0) in several aspects in these simple tests;</p>
+
+<p>In the meantime, in single thread test, zmalloc is 20x to 50x faster than Netty's new <a href="https://blog.twitter.com/2013/netty-4-at-twitter-reduced-gc-overhead">ByteBufAllocator</a>. This confirms to the I understand to the Netty's new allocator. But, one unfair thing here is that the Netty only provide a Buffer implementation which is contributed to the garbage collection itself. However, zmalloc just operates on the raw memory address and products zero garbage. </p>
+</li>
+</ul>
+<p>For more complex scenarios, I do not further tests. Because the C and Java language constructs and libraries are much different, we can not get more safe conclusion by comparing apple with orange.</p>
+</blockquote>
+
+<p>Note, we have solid testcases to guarantee the correctness of zmalloc. And the zmalloc has been heavily used in Landz stack's znr, net and http module. It has provided the excellent results in kinds of scenarios.</p>
+
+<p>It must be said that, the access to offheap is dangerous! So, you should double check you keep all of the contracts of offheap area.</p>
+
+<p>And for these reasons, we desgin a high level Buffer inspired by Netty ByteBuf on the top zmalloc. The final choose to the Netty way rather than Java nio Buffer is, that it is find that even <a href="http://mechanical-sympathy.blogspot.com/2011/12/java-sequential-io-performance.html">Martin Thompson forget to flip the nio buffer</a>.</p>
+
+<p>In the desgin of Landz's Buffer, we carefully evaluate the Netty ByteBuf's pros and cons. Landz also provide the similiar methods to operate on buffer, but it is allow to interleave different endian bytes. Meantime, Landz takes care of the Buffer's performance to allow optional bound checking and downcast to avoid "interface juggling"(many invokeinterface-s in fluent interface pattern). Finally, the Landz's Buffer can be operated in a speed to close to that of raw offheap, and 40%+ faster than that of Netty ByteBuf.(the naming of ByteBuf is really ugly...)</p>
+
+<h3>
+<a name="modularity-devops-and-more" class="anchor" href="#modularity-devops-and-more"><span class="octicon octicon-link"></span></a>Modularity, DevOps and more</h3>
+
+<p>The Modularity is a long-waiting feature in Java. But it is definitely <a href="http://mreinhold.org/blog/on-the-next-train">absent from Java 8</a>. I should be one of the most disappointed men. Because, the Oralce has not realized that the Importance of the modularity not only for Java, but also for the software engineering.</p>
+
+<p>The built-in package management systems largely contribute to the pop of Ruby and Node.js. I think Java community should have a one. It will be nether complex dynamic OSGI nor stupid-complex boilerplate Maven. </p>
+
+<p>The Landz will provide a self-hosted module repo for testing in the near future.</p>
+
+<p>DevOps is a more aggressive target. It will be great to ship scripting and serviceability runtime. I may choose some existed open source projects as a base in that Landz have not enough resources on all of its interestings.</p>
+
+<h3>
+<a name="znr-and-java-ffi" class="anchor" href="#znr-and-java-ffi"><span class="octicon octicon-link"></span></a>ZNR and Java FFI</h3>
+
+<p>In this two days, Charles Nutter of JRuby team has proposed one <a href="https://gist.github.com/headius/8670271">Java FFI JEP</a> (for Java 9 definitely). </p>
+
+<p>Combining with Landz's offheap facilities, a layer accessed into Linux core native functions from Java has been constructed in pure Java, called ZNR(landZ Native Runtime). The Amazing thing is that all done in pure Java. This extremely reduces the cost of maintaining without any performance penalty except JNI overhead. In fact, the low plumbing provided by Wayne Meissner is JIT engine. I leave more fun for your exploring. Do not hesitate to ask in the <a href="http://groups.google.com/d/forum/landz">Landz's group</a> if you have any question.</p>
+
+<p>About the performance, the jffi implementation can be faster than some JNI implementationss(note: the jffi itself is still based on JNI definitely). Like shown in landz, the znr's socket wrappers are even faster than one jboss project' xnio. This is because you do not wrapping yourself code into a JNI to call into the share library such as glibc.</p>
+
+<p>All work stems from one disappeared man - Wayne Meissner 's <a href="https://github.com/wmeissner/crazy-ivan">crazy-ivan</a>. I give it a moderate hacking to make it suitable to the target of Landz design. I hope the current JRuby team can maintain the whole hard thing. Then, znr will kept in a thin module after Java 9. If not, Landz will continue to maintain znr independently.</p>
+
+<h3>
+<a name="z-stack-for-web-backend" class="anchor" href="#z-stack-for-web-backend"><span class="octicon octicon-link"></span></a>Z Stack for Web Backend</h3>
+
+<p>Except the kernel, we need a web backend stack, not only to promote Landz itself, but also to enable the Landz "eating its own dog food". An direct epoll syscall wrappings have been provided finally based on my reflections and reviews to the current Java shipped NIO implementation(but only for x86-64 linux now). This seems also interesting to the next version of Netty mentioned in <a href="https://blog.twitter.com/2013/netty-4-at-twitter-reduced-gc-overhead">Twitter blog entry</a>. And more, an AIO style of TCP module(landz.net module) is ready(the formal name may be <strong>Proactor</strong>). Because I prefer a composable architecture, rather than the common inherited design. It may need more collections to the requirements to API from the users.</p>
+
+<p>A whole web backend is huge, Landz is glad to collaborate with other open source projects. Join us at <a href="http://groups.google.com/d/forum/landz">Landz's group</a>.</p>
+
+<h2>
+<a name="near-or-far-future" class="anchor" href="#near-or-far-future"><span class="octicon octicon-link"></span></a>Near or Far Future</h2>
+
+<p>For much limited resources and natural affinity to open source world, the Landz own stack will be natively built and extremely optimized with the modern Linux kernel + modern x86-64 hardware. The z stack will be ported into x86-64 Windows and MacOS for the purpose of developement but the performance will not be touched. We limit our strength to the power and fun of . This just follows our Landz's philosophies.</p>
+
+<p>Landz are also interesting to the next 64bit ARM server side hardware. A dedicated support will be provided for it when its coming into the real production. I personally think the first generation of 64bit ARM will be much below the x86 in the side of performance. But it deserves embracing from Landz for a more wide and open ecosystem than x86. That is the Landz's taste! </p>
+
+<p>Landz continue to review and introduce some goodies in the Java world, like Guava. It is a joy to work with best open source contributions in the world for Landz's users and Landz itself.</p>
+
+<p>Java 8 has been already in the bleeding edge front. Landz has great passion to push the front on top of next open Java, like GPU, cluster, big data side, or something like (security)rule engine...Nothing is impossible!</p>
+
+<p>Because I am in a cold these days in my back hometown for Chine Spring Festival. So, I drop several important but uncompleted modules/components, like contracts, loggging, security, lambdabyte(type safe bytecode operation in Java, cool)... I think the current Landz has got a solid foundation for several high performance field usages. It is the time for inviting friends to come in. </p>
+
+<p>I am truely looking forward to working with all of your guys having the similiar ideas to challenge that mountain top together. Join us at <a href="http://groups.google.com/d/forum/landz">Landz's group</a> or <a href="mailto:%20jin.phd@gmail.com">contact me directly</a>(if you have private concerns). Finally, if you has idea to run Landz kernel or more with your business, you are contrbibuting to Landz already. I will provide my 0day help for you as possbile. Thannk you!</p>
+
+<p>A http module in z stack for self-hosting Landz's website is coming into the eye. I will replace the github page with Landz's true website.</p>
+
+<p>Let's keep rolling!</p>
+
+<p>Jin Mingjian
+<br>
+2014-01-31 </p>
+      </section>
+    </div>
+    <footer>
+      <p>Project maintained by <a href="https://github.com/landz">landz</a></p>
+      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+    </footer>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-47684607-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
