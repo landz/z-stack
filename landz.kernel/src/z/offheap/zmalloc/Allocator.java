@@ -46,6 +46,117 @@ import static z.util.Unsafes.systemAllocateMemory;
  *        which is in a specific SizeType
  * <p> SizeClass: Chunks are only allocated in one size of SizeClass
  *
+ * <p>
+ *
+ * <b>Designer Note:</b>
+ *
+ * <p>
+ * Landz's zmalloc is designed from scratch to avoid any license problem.
+ * There are three public reference for the inspirations:
+ * <ul>
+ * <li> one article about Memcached's slab allocator
+ * (http://nosql.mypopescu.com/post/13506116892/memcached-internals-memory-
+ *  allocation-eviction);
+ * <li> one book chapter about linux kernel slab allocator(detailed link);
+ * <li> one paper about lock-free memory allocator by Oracle's Dave Dice
+ *    (detailed link);
+ * </ul>
+ * <p>
+ * Generally, the zmalloc is more like as slab allocator.
+ * It has the possible to meet "pathological case"
+ * (There are workaround suggestions). But as my investigate to public bug
+ * reports, ptmalloc and tcmalloc also has this problem.
+ *
+ * <p>
+ * The main structure of current impl is two-level: ZMPage, and ZMChunck.
+ * Because the page and chunk is common, so I ZM- prefix to make them
+ * distinguished with others. And more additions, the naming in Allocator class
+ * is C-style, in that: <br/>
+ * <ul>
+ * <li> there are many new concepts in this allocator field,
+ * then full camel-case naming is hard to read, short camel-case naming is
+ * talking nothing; <br/>
+ * <li> to warning the developer we are in dangerous area.
+ * </ul>
+ * <p>
+ * ZMPage: is the container of the ZMChuncks, which is 2MB now.
+ * 2MB is not random chosen size, which is the default large Page size in
+ * Linux. This limits current max size of chunk can be allocated by zmalloc
+ * <br/>(NOTE: There are several ways for solving this. I may push a version to
+ * support a larger size in a near future.)
+ *
+ * <p>
+ * Because zmalloc makes the page to the same size. The page can be shared
+ * between threadlocal pool and global pool.
+ * This is different to the size of slab of Memcached as my understanding to
+ * that reference. (I don't comment on which is better in that the references
+ * can not drive us to any conclusion.)
+ *
+ * <p>
+ * ZMChunck is the final allocated memory area for use. Once a ZMPage is used
+ * to allocate ZMChuncks, then ZMPage is assigned to a sizeClass which indicated
+ * this ZMPage is for which size of ZMChunck. A sizeClassIndex(or sci for short
+ * in sources) is for indexing one size of the pre-allocate table(or said a
+ * continuous memory area in the offheap area). This is just for speeding and
+ * improving memory locality(all this can be done by on-heap objects).
+ *
+ * <p>
+ * ZMPage contains the metadata of ZMChunk. This is different to that the
+ * jemalloc uses RBTree. (I don't comment on which is better in that the
+ * references can not drive us to any conclusion.)
+ *
+ * One design tip with the ZMPage is that, the ZMPage is 2MB aligned in design,
+ * it make to reason one ZMChunk belongs to which ZMPage in two of fastest
+ * instructions in all of CPUs):
+ *
+ * <pre>
+ * long addressPage = addressChunk-(addressChunk&(SIZE_ZMPAGE-1));
+ * </pre>
+ *
+ * see this statement in {@link Allocator#free}
+ *
+ * <p>
+ * This gives big benefits: ZMChunk doesn't need to store any metadata. This
+ * shortens the critical path and decide how the way landz manage the metadata.
+ *
+ * <p>
+ * ZMPages are from a global pages pool, then a ZMPage should be in a thread
+ * pool to use. When ZMPage in the free state, it is can be freed to global pool
+ * when some conditions.
+ *
+ * <p>
+ * The operations inside of threadLocal pool, as the name indicated, are thread safe.
+ *
+ * <p>
+ * The Operations from threadLocal pool to global pool use the landz's
+ * {@link MPMCQueue}, which provide a high-throughput/low-latency lock-free
+ * bounded queue.
+ *
+ * <p>
+ * One important side of thread-safe design to allocator is the cross-thread
+ * free invocation. ZMalloc solves this like this:
+ * <ul>
+ * <li> metadata records the thread's tid when allocated, call ownedTid;
+ * <li> if free thread's tid found not match with ownedTid, then zmalloc just
+ *      put the return that chunk to ownedTid's remote freed queue.
+ * <li> when some conditions happens, the remote freed queue will be drained for
+ *      use;
+ * <li> remote freed queue is a careful design lock-free/ABA-free MPSC queue
+ *      by Landz itself;
+ * </ul>
+ *
+ * <p>
+ * more detail comes here...
+ *
+ * <p>
+ * Namings in the methods:
+ * <ul>
+ * <li> pg_ is for page operations;
+ * <li> gp_ is for global pool operations;
+ * <li> tlp_ is for threadlocal pool operations;
+ *
+ * </ul>
+ *
  *
  */
 public class Allocator {
